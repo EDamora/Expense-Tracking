@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // wajib diimport
 import AuthLayout from "../../components/layouts/AuthLayout";
 import ProfilPhotoSelector from "../../components/Inputs/ProfilPhotoSelector";
 import Input from "../../components/Inputs/Input";
@@ -76,15 +77,18 @@ const SignUp = () => {
             </div>
           </div>
 
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
 
-          <button
-            type="submit"
-            className="mt-4 w-full py-2 bg-blue-500 text-white rounded"
-          >
-            Sign Up
+          <button type="submit" className="button-primary">
+            SIGN UP
           </button>
 
+          <p className="text-[13px] text-slate-800 mt-3">
+            Already have an account?{" "}
+            <Link className="font-medium text-primary underline" to="/login">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
     </AuthLayout>
